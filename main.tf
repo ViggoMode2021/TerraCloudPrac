@@ -40,16 +40,7 @@ resource "aws_route_table" "route_table2" {
   }
 }
 
-resource "aws_dynamodb_table" "basic-dynamodb-table" {
-  name           = "GameScores"
-  billing_mode   = "PROVISIONED"
-  read_capacity  = 20
-  write_capacity = 20
-  hash_key       = "UserId"
-  range_key      = "GameTitle"
+resource "aws_s3_bucket" "vig-terraform-cloud-bucket-no-i" {
+  bucket = "vig-terraform-cloud-bucket-no-i"
 
-  attribute {
-    name = "UserId"
-    type = "S"
-  }
 }
